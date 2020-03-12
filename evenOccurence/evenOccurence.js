@@ -11,5 +11,25 @@
  */
 
 var evenOccurrence = function(arr) {
-  // Your work here!
+  let nums = {};
+  for(var i = 0; i < arr.length; i++){
+    if(nums[arr[i]] === undefined){
+      nums[arr[i]] = 1;
+    }else{
+      nums[arr[i]]++
+    }
+
+    for(var key in nums){
+      if(nums[key] % 2 === 0){  
+        return nums[key];   //not accessing key's value?
+      }
+    }
+  }
 };
+
+//create object
+//iterate through the array.
+//if obj.arr[i] is undefined, add to obj as property with value of 1
+//if not undefined increment that property's value by 1.
+//iterate through obj.
+//if obj prop %2 === 0 return it
