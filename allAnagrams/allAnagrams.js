@@ -13,5 +13,37 @@
  */
 
 var allAnagrams = function(string) {
-  // Your code here.
+  let splArr = [];
+  let conArr = [];
+  let anArr = [];
+  let count = 0;
+  splArr = string.split("");
+  for (let i = 0; i < splArr.length; i++){
+    if(i === 0){
+      count = 1
+    }else if(i > 0){
+      count = 0
+    }
+    for (let k = count; k < splArr.length; k++){
+      conArr.push(splArr[i], splArr[k])
+      conArr[0].concat(conArr.length-1)
+      
+    }
+    anArr.push(conArr);
+  }
+  console.log(anArr)
+  return anArr;
 };
+
+/*
+create new array
+create count
+split string
+push to new array
+iterate over array
+nested loop
+push concat [i] with [k][k]
+add counter
+return array
+*/
+
