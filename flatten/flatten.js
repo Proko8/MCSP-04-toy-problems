@@ -29,4 +29,18 @@ then iterate over it
 and push each element into the returned array
 return it
 
+If you know there is only one level of nested arrays this will work 
+function flatten(array) {
+    let flatArray = [];
+    for(var i = 0; i < array.length; i++){
+       if(Array.isArray(array[i])){
+            for(var k = 0; k < array[i].length; k++){
+                flatArray.push(array[i][k]);
+            }
+        }else{
+            flatArray.push(array[i]);
+        }
+    }
+    return flatArray;
+}
 */
