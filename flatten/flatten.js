@@ -4,12 +4,11 @@
 // flatten([1,['a', 2, [8, true], 7]]) returns [1, 'a', 2, 8, true, 7]
 
 function flatten(array) {
-    let flatArray = [];
     for(var i = 0; i < array.length; i++){
+        const flatArray = [];
        if(Array.isArray(array[i])){
-            for(var k = 0; k < array[i].length; k++){
-                flatArray.push(array[i][k]);
-            }
+            flatten(array[i])
+            flatArray.push(array[i]);
         }else{
             flatArray.push(array[i]);
         }
