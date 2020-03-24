@@ -23,7 +23,8 @@ var commonCharacters = function(string1, string2) {
   }
   return _.uniq(arr3);
 };
-//console.log(commonCharacters('acexivou', 'aegihobu'))
+
+console.log(commonCharacters('acexivou', 'aegihobu'))
 
 /* 
 split the strings into individual strings

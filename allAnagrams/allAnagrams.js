@@ -13,37 +13,34 @@
  */
 
 var allAnagrams = function(string) {
-  let splArr = [];
-  let conArr = [];
-  let anArr = [];
-  let count = 0;
-  splArr = string.split("");
-  for (let i = 0; i < splArr.length; i++){
-    if(i === 0){
-      count = 1
-    }else if(i > 0){
-      count = 0
-    }
-    for (let k = count; k < splArr.length; k++){
-      conArr.push(splArr[i], splArr[k])
-      conArr[0].concat(conArr.length-1)
-      
-    }
-    anArr.push(conArr);
+  if(string.length === 1 ){
+    return string;
+  }else if (string.length < 1){
+    return string;
   }
-  console.log(anArr)
-  return anArr;
+    function recurse (str, anagram){
+      let unique = {};
+      if(typeof str === "string"){
+        unique[anagram] = 1
+      }
+      for(var i = 0; i < str.length; i++){
+        recurse(anagram + str[i], str.slice(0,i) + str.slice(i + 1))
+     }
+    }
+
+    return Object.keys(unique);
 };
 
 /*
-create new array
-create count
-split string
-push to new array
-iterate over array
-nested loop
-push concat [i] with [k][k]
-add counter
-return array
+I String
+O Array of Strings with each randomised order of input string.
+C dont use uniq()
+E
+
+example input- 
+'anagram'
+
+i need to iterate over the input
+
 */
 
