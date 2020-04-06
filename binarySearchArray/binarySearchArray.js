@@ -11,5 +11,32 @@
  */
 
 var binarySearch = function(array, target) {
-
+    let min = 0;
+    let max = array.length-1;
+    let half;
+    while ( min <= max){
+        half = (min + max ) /2;
+        if ( array[half] === target){
+            return array[i];
+        }else{
+            if(array[half] < target){
+                min = half + 1;
+            }else{
+                max = half-1
+            }
+        }
+    }
+    return array[i];
 };
+
+
+/*
+var binarySearch = function(array, target) {
+    for ( var i = 0; i < array.length; i++ ){
+        if(target === array[i]){
+             return array[i];
+        }
+    }
+};
+
+*/
