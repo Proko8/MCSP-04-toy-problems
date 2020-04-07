@@ -9,4 +9,18 @@
 
 // NOTE: DO NOT use JavaScript’s built-in sorting function (Array.prototype.sort).
 
-function bubbleSort(array) {}
+function bubbleSort(array) {
+    let k = 1;
+    let x;
+    for( var i = 0; i < array.length; i++ ){
+        while( k < array.length){
+             if( array[i] >= array[k]){
+                x = array[k];
+                array[k] = array[i];
+                array[i] = x;
+            }
+            k++
+        }
+    }
+    return array;
+}
