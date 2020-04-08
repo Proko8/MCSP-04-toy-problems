@@ -45,7 +45,36 @@ var testingTransform = function(array) {
   return transform;
 };
 
+var isSorted = function(array){
+  for(var i = 0; i < array.length; i++){
+    if(array[i] > array[i+1]){
+      return false;
+    } 
+  }
+  return true;
+}
+
 var insertionSort = function(array) {
-  // Your code goes here. Feel free to add helper functions if needed.
+  for(var i = 1; i < array.length; i++){
+    while(array[i] > 0 && array[i-1] > array[i]){
+      let x = array[i-1];
+      let k = array[i];
+      array[i] = x;
+      array[i-1] = k;
+    };
+  };
+  if(isSorted(array) !== true){
+    insertionSort(array);
+  }else{
   return array;
+  }
 };
+
+
+// I- array
+// O- sorted array
+
+//iterate over the array
+//check if the current index is large than the ones before it
+//if so swap them
+//recurse
