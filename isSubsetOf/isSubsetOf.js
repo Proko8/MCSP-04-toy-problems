@@ -22,5 +22,38 @@
  */
 
 Array.prototype.isSubsetOf = function(arr) {
-  // your code here
+  let sub = false;
+  if(arr.length === 0){
+    sub = true;
+  }
+
+  for(let i = 0; i < this.length; i++){
+    let subset = false;
+    for(let k = 0; k < arr.length; k++){
+      if(arr[k] === this[i]){
+        subset = true;
+      }
+    }
+    if(subset !== true || sub === true){
+      return false;
+    }
+  }
+  return true;
 };
+
+// a subset array is checking if parts every part of the input array are in the mainset array to include empty array
+
+// I- subset array
+
+// O- true/false
+
+// C- 
+
+// E- disregard duplicates
+
+
+// if input array is empty sub = true
+// iterate over mainset array
+// iterate over subset array
+// check if every element of subset array are in the mainset array
+// if an element does not match, return false
