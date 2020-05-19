@@ -13,13 +13,13 @@ function militaryTime(timeStr) {
       timeArr.pop();
       timeArr.pop();
       timeArr.join(' ').trim();
-      let timeNum = parseInt(timeArr);
+      timeNum = parseInt(timeArr);
       timeNum += 1200;
     }else if(timeArr.length-2 === "a"){
       timeArr.pop();
       timeArr.pop();
       timeArr.join(' ').trim();
-      let timeNum = parseInt(timeArr);
+      timeNum = parseInt(timeArr);
     }
     if(timeNum > 2400){
       return timeNum - 2400;

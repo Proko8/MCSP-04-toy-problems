@@ -40,9 +40,14 @@ var translateRomanNumeral = function(romanNumeral) {
   let M = 1000;
   let total = 0;
   let numArr = [];
+  for(let i = 0; i < romanNumeral.length; i++){
+    if (roma)
+  }
 
   for(let i = 0; i < romanNumeral.length; i++){
-    numArr.push(parseInt(romanNumeral[i]))
+    let newNum = parseInt(romanNumeral[i])
+    if(newNum )
+    numArr.push()
   }
     let i = 0;
     while(i < numArr.length){
